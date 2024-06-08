@@ -16,7 +16,7 @@ def authorize_user():
     password = get_password()
     current_user = authenticate_user(email, password)
     if current_user:
-        print(f'User {current_user['email']} has been authorized\n')
+        print(f'\nUser {current_user['email']} has been authorized')
         return current_user
     else:
         print('User name not found or password missmatch\n')

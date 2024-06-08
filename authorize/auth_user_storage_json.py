@@ -4,7 +4,7 @@ from os.path import exists as file_exists
 
 
 USERS_FILE_JSON = 'users.json'
-ADMIN_USER = {"user": "admin", "password": "password"}
+ADMIN_USER = {"email": "admin@test.com", "password": "password"}
 
 
 def initialize_user_file(json_file=USERS_FILE_JSON):
@@ -14,9 +14,8 @@ def initialize_user_file(json_file=USERS_FILE_JSON):
 
 def check_for_users_file(json_file=USERS_FILE_JSON):
     if not file_exists(json_file):
-        print(f"Users file {json_file} not found.)")
+        print(f"\nUsers file {json_file} not found.)")
         initialize_user_file()
-        print(f'New user file {json_file} has been created.')
 
 
 def read_users_from_file(json_file=USERS_FILE_JSON) -> list:

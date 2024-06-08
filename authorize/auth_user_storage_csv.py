@@ -4,7 +4,7 @@ from os.path import exists as file_exists
 
 
 USERS_FILE_CSV = 'users.csv'
-ADMIN_USER = {"user": "admin", "password": "password"}
+ADMIN_USER = {"email": "admin@test.com", "password": "password"}
 
 
 def initialize_user_file(json_file=USERS_FILE_CSV):
@@ -14,9 +14,8 @@ def initialize_user_file(json_file=USERS_FILE_CSV):
 
 def check_for_users_file(csv_file=USERS_FILE_CSV):
     if not file_exists(csv_file):
-        print(f"Users file {USERS_FILE_CSV} not found.)")
+        print(f"\nUsers file {USERS_FILE_CSV} not found")
         initialize_user_file()
-        print(f'New user file {USERS_FILE_CSV} has been created.')
 
 
 def prepare_user_data(users_list) -> list:
